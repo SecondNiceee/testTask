@@ -1,5 +1,5 @@
 import React, { FC, SetStateAction } from 'react';
-import { TypeTodoFilter } from '../../model/TypeTodoFilter';
+import { TypeTodoFilter } from '../model/TypeTodoFilter';
 
 interface ITodoFilter{
     todoFilter : TypeTodoFilter,

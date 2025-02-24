@@ -1,5 +1,5 @@
 import React, { FC, SetStateAction, useCallback } from "react";
-import { TypeTodoItem } from "../../model/TypeTodoItem";
+import { TypeTodoItem } from "../model/TypeTodoItem";
 
 interface ITodoItem {
   todo: TypeTodoItem;

@@ -1,11 +1,11 @@
-import React, {  useMemo, useState } from 'react';
-import { TypeTodoItem } from '../../model/TypeTodoItem';
+import {  useMemo, useState } from 'react';
 import TodoItem from './TodoItem';
 import TodoInput from './TodoInput';
-import { TypeTodoFilter } from '../../model/TypeTodoFilter';
 import TodoFilters from './TodoFilters';
-import useFilterTodos from '../../hooks/useFilterTodos';
 import EmptyNotation from './EmptyNotation';
+import useFilterTodos from '../hooks/useFilterTodos';
+import { TypeTodoFilter } from '../model/TypeTodoFilter';
+import { TypeTodoItem } from '../model/TypeTodoItem';
 
 const TodoList= () => {
     const [todos, setTodos] = useState<TypeTodoItem[]>([])
