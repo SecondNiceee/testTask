@@ -19,8 +19,8 @@ const TodoInput: FC<ITodoInput> = ({ setTodos }) => {
 
   return(
     <div className="flex white-shadow rounded-md">
-        <input placeholder = {"Нажмите Enter чтобы создать Todo штучку"} className="w-[80%] h-[100%] px-5 py-4" onKeyDown={handleKeyDown} type="text" />
-        <button className="h-[100%] w-[20%] bg-blue-500 px-5 py-4">Create!</button>
+        <input placeholder = {"Нажмите Enter чтобы создать Todo штучку"} className="w-[80%] px-5 py-4" onKeyDown={handleKeyDown} type="text" />
+        <button className=" w-[20%] bg-blue-500 px-5 py-4">Create!</button>
     </div>
   )
 };
