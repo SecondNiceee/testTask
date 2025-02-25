@@ -11,13 +11,13 @@ const TodoFilters:FC<ITodoFilter> = ({setTodoFilter, todoFilter}) => {
     }
     return (
         <div className='flex gap-2 items-center'>
-        <div onClick={changeTodoFilter("all")}  className={`flex rounded-sm px-3 border-black border-solid py-2 ${todoFilter === "all" && 'border-2'}`}>
+        <div data-testid = "filter-all-button" onClick={changeTodoFilter("all")}  className={`flex rounded-sm px-3 border-black border-solid py-2 ${todoFilter === "all" && 'border-2'}`}>
             <button className='p'>All</button>  
         </div>
-        <div onClick={changeTodoFilter("active")} className={`flex rounded-sm px-3 py-2 ${todoFilter === "active" && 'border-2'}`}>
+        <div data-testid = "filter-incomplete-button" onClick={changeTodoFilter("active")} className={`flex rounded-sm px-3 py-2 ${todoFilter === "active" && 'border-2'}`}>
             <button className='p'>Active</button>  
         </div>
-        <div onClick={changeTodoFilter("completed")} className={`flex rounded-sm px-3 py-2 ${todoFilter === "completed" && 'border-2'}`}>
+        <div data-testid = "filter-completed-button" onClick={changeTodoFilter("completed")} className={`flex rounded-sm px-3 py-2 ${todoFilter === "completed" && 'border-2'}`}>
             <button className='p'>Completed</button>  
         </div>
     </div>

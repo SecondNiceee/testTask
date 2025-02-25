@@ -11,9 +11,9 @@ const TodoItem: FC<ITodoItem> = ({ todo, todoIndex, setTodos }) => {
     setTodos((value) => value.map( (todo, index) => index === todoIndex ? {...todo, completed : !todo.completed} : todo ));
   }, [setTodos, todoIndex]);
   return (
-    <div onClick={setTodo} className="flex  p-4 items-center border-solid border-black border-2 rounded-lg cursor-pointer">
+    <div data-testid="todo-item" onClick={setTodo} className="flex  p-4 items-center border-solid border-black border-2 rounded-lg cursor-pointer">
       <div className="flex gap-5 items-center">
-        <div className="w-[50px] h-[50px] rounded-[100%] border border-solid border-black flex justify-center items-center">
+        <div data-testid = "complete-button" className="w-[50px] h-[50px] rounded-[100%] border border-solid border-black flex justify-center items-center">
           <p
             className={`h4 text-green-500 ${
               todo.completed ? "block" : "hidden"

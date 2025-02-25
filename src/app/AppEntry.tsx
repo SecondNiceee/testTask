@@ -1,6 +1,6 @@
-import BaseProviders from './BaseProviders';
-import AppRouter from './AppRouter';
-import "./styles/index.css";
+import AppRouter from "./AppRouter";
+import BaseProviders from "./BaseProviders";
+import "./styles/index.css"
 
 const AppEntry = () => {
 

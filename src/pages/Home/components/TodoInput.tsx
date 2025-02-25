@@ -1,26 +1,35 @@
-import React, { FC, SetStateAction } from "react";
+import React, { FC, MouseEventHandler, ReactEventHandler, SetStateAction, useState } from "react";
 import { TypeTodoItem } from "../model/TypeTodoItem";
 
 interface ITodoInput {
   setTodos: React.Dispatch<SetStateAction<TypeTodoItem[]>>;
 }
 const TodoInput: FC<ITodoInput> = ({ setTodos }) => {
+
+
+  const [inputValue,setInputValue] = useState<string>('')
   const addTodo = (value: string) => {
     setTodos((val) => [...val, { name: value, completed: false }]);
   };
+  
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const value = (e.target as HTMLInputElement).value;
+
     if (e.key === "Enter") {
-      addTodo(value);
-      (e.target as HTMLInputElement).value = "";
+      addTodo(inputValue);
+      setInputValue("")
     }
+  };
+
+  const buttonClick:MouseEventHandler<HTMLButtonElement> = (e) => {
+    addTodo(inputValue);
+    setInputValue("")
   };
 
   return(
     <div className="flex white-shadow rounded-md">
-        <input placeholder = {"Нажмите Enter чтобы создать Todo штучку"} className="w-[80%] px-5 py-4" onKeyDown={handleKeyDown} type="text" />
-        <button className=" w-[20%] bg-blue-500 px-5 py-4">Create!</button>
+        <input onChange={(e) => setInputValue(e.target.value)} value={inputValue} data-testid = "todo-input" placeholder = {"Нажмите Enter чтобы создать Todo штучку"} className="w-[80%] px-5 py-4" onKeyDown={handleKeyDown} type="text" />
+        <button onClick={buttonClick} data-testid="add-button" className=" w-[20%] bg-blue-500 px-5 py-4">Create!</button>
     </div>
   )
 };

@@ -36,7 +36,7 @@ const TodoList= () => {
 
                     <TodoFilters setTodoFilter={setTodoFilter} todoFilter={todoFilter} />
 
-                    <button onClick={clearCompleted} className='p'>Clear completed</button>
+                    <button data-testid = "clear-completed-button" onClick={clearCompleted} className='p'>Clear completed</button>
                 </div>
             </div>       
     );
