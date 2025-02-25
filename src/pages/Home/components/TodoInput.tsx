@@ -9,13 +9,16 @@ const TodoInput: FC<ITodoInput> = ({ setTodos }) => {
 
   const [inputValue,setInputValue] = useState<string>('')
   const addTodo = (value: string) => {
-    setTodos((val) => [...val, { name: value, completed: false }]);
+    if (value){
+      setTodos((val) => [...val, { name: value, completed: false }]);
+    }
   };
   
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 
     if (e.key === "Enter") {
+      i
       addTodo(inputValue);
       setInputValue("")
     }

@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom'
 import AppEntry from '../AppEntry';
-import { MemoryRouter } from 'react-router';
+
 
 test('add todo item', () => {
 
