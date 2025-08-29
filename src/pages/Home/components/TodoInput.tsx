@@ -18,7 +18,6 @@ const TodoInput: FC<ITodoInput> = ({ setTodos }) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
 
     if (e.key === "Enter") {
-      i
       addTodo(inputValue);
       setInputValue("")
     }
